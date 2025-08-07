@@ -1,10 +1,10 @@
-VERSION = "3.0";
+VERSION = "3.1";
 
 local opencore = require("lib/opencore");
 
-SWITCH = opencore.usePCPower(4);
+SWITCH = opencore.usePCPower(6);
 TRANSMITING = opencore.usePCPower(6);
-DOCODING = opencore.usePCPower(4);
+DOCODING = opencore.usePCPower(9);
 
 function sleep(time)
     os.sleep(time);

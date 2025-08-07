@@ -18,13 +18,14 @@ for _, device in pairs(devices) do
 
 
     if device.class == "memory" and tonumber(device.clock) then
-        OSU_MULTIPLEXOR = OSU_MULTIPLEXOR + tonumber(device.clock) / 3000;
+        OSU_MULTIPLEXOR = OSU_MULTIPLEXOR + tonumber(device.clock) / 4500;
         --print("OSU can use " .. OSU_MULTIPLEXOR);
     end
 end
 
 function opencore.usePCPower(time)
-    return time - time * (PROCESSOR_MULTIPLEXOR * OSU_MULTIPLEXOR * 0.9);
+    local complex = PROCESSOR_MULTIPLEXOR * OSU_MULTIPLEXOR;
+    return time - time * (complex * 0.9);
 end
 
 return opencore;
